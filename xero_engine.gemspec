@@ -7,14 +7,14 @@ require "xero_engine/version"
 Gem::Specification.new do |s|
   s.name        = "xero_engine"
   s.version     = XeroEngine::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of XeroEngine."
-  s.description = "TODO: Description of XeroEngine."
-  s.license     = "MIT"
+  s.authors     = ["Adam Burmister"]
+  s.email       = ["adam.burmister@gmail.com"]
+  s.homepage    = "http://www.burmister.com"
+  s.summary     = "Xero partner addon Rails Engine."
+  s.description = "Xero partner addon Rails Engine."
+  s.license     = "© Adam Burmister 2014, All rights reserved"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.1.4"
