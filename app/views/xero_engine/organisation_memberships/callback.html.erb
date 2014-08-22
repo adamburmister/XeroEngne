@@ -1,0 +1,5 @@
+<script>
+window.opener.postMessage('<%= raw @organisation.to_json %>', '*');
+window.close();
+</script>
+<p>Connected! You may now close this window.</p>

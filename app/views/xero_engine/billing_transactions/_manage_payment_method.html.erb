@@ -1,0 +1,26 @@
+<div class="panel-group" id="card-details">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="btn-block" data-toggle="collapse" data-parent="#accordion" href="#cardDetailsCollapsible">
+          <i class="fa fa-angle-down pull-right"></i> Manage payment method
+        </a>
+      </h4>
+    </div>
+    <div id="cardDetailsCollapsible" class="panel-collapse collapse">
+      <div class="panel-body">
+        <%- if defined?(manage_payment_method) %>
+          <p>
+            Payments are made using your stored <strong><%= manage_payment_method['brand'] %> card ending in <%= manage_payment_method['last4'] %></strong>, 
+            expiring <%= "#{manage_payment_method['exp_month']}/#{manage_payment_method['exp_year']}" %> 
+          </p>
+          <p>
+            <%= link_to "Remove this card", payment_method_path(id: manage_payment_method['id']), class: 'btn btn-danger', :data => { :confirm => "Are you sure?" }, :method => :delete %>
+          </p>
+        <%- else %>
+          <span class="text-muted">No cards stored for this account</span>
+        <%- end %>
+      </div>
+    </div>
+  </div>
+</div>

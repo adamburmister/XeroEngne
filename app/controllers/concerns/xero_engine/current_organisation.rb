@@ -1,4 +1,4 @@
-module XeroEngine::Concerns::Controllers::CurrentOrganisation
+module XeroEngine::CurrentOrganisation
   extend ActiveSupport::Concern
 
   included do

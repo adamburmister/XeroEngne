@@ -1,10 +1,12 @@
 module XeroEngine
   class AuthorisedController < ApplicationController
 
+    # Concerns
     include Pundit
-    include Concerns::Controllers::XeroClient
-    include Concerns::Controllers::XeroOauth
+    include XeroClient
+    include XeroOauth
 
+    # Filters
     before_filter :authenticate_user!,
                   :ensure_current_organisation,
                   :warn_no_stripe_card_payment_method

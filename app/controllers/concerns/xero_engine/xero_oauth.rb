@@ -1,4 +1,4 @@
-module XeroEngine::Concerns::Controllers::XeroOauth
+module XeroEngine::XeroOauth
   extend ActiveSupport::Concern
 
   included do

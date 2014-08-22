@@ -1,0 +1,10 @@
+<%= form_tag payment_methods_path, method: :post do |f| %>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= ENV.fetch('STRIPE_PUBLIC_KEY') %>"
+          data-label="Add a card for this account"
+          data-name="<%= ENV.fetch('SITE_NAME') %>"
+          data-email="<%= current_user.email %>"
+          data-description="Add a card to your account"
+          data-panel-label="Save Card"
+          _data-amount="0"></script>
+<% end %>

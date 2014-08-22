@@ -1,0 +1,50 @@
+<div class="panel-group" id="credit-history">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="btn-block" data-toggle="collapse" data-parent="#accordion" href="#creditHistoryCollapsible">
+          <i class="fa fa-angle-down pull-right"></i> Payment history
+        </a>
+      </h4>
+    </div>
+    <div id="creditHistoryCollapsible" class="panel-collapse collapse">
+    <%- if credit_history.size == 0 %>
+      <div class="panel-body">
+        No payments.
+      </div>
+    <%- else %>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% credit_history.each do |credit_transaction| %>
+          <tr>
+            <td><%= humanized_money_with_symbol credit_transaction.amount %></td>
+            <td><%= credit_transaction.created_at.strftime("%l:%M%P, %b %d %Y") %></td>
+            <td>
+              <%- if credit_transaction.completed? %>
+                <span class="label label-success">Paid</span>
+              <%- else %>
+                <span class="label label-warning" data-toggle="tooltip" data-placement="left" title="Payment is processing and hasn't yet been applied to your account balance.">Pending</span>
+              <%- end %>
+            </td>
+          </tr>
+        <%- end %>
+        </tbody>
+      </table>
+    <%- end %>
+    </div>
+  </div>
+</div>
+<% content_for :javascript do %>
+<script>
+$(document).ready(function() {
+  $('#credit-history .label-warning').tooltip();
+});
+</script>
+<% end %>

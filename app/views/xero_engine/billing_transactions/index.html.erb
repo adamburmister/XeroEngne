@@ -1,0 +1,82 @@
+<div class="row">
+  <div class="col-md-8">
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-md-4 alert text-muted pull-left">
+          <h1 class="h4">About Billing</h1>
+          <p>Billing works on a pre-paid basis. Purchase top-up credit to fund your account.</p>
+          <p>We'll warn you when you run low, or you can opt-in to automatically credit your account when it drops below $10.</p>
+        </div>
+
+        <div class="col-md-8">
+          <h1>
+            <span class="label label-info"><%= humanized_money_with_symbol current_organisation.credit_amount %></span>
+            account credit
+          </h1>
+
+          <hr />
+
+      <% if current_organisation.stripe_card %>
+        <%= simple_form_for @credit_transaction do |f| %>
+          <%= f.error_notification %>
+          <%= render partial: 'shared/error_messages', object: @credit_transaction %>
+          <h2 class="h4">Top up your account&hellip;</h2>
+
+          <div class="form-group row">
+            <div class="col-xs-6">
+              <%= f.select :amount_cents, 
+                          [['$10.00', 1000], 
+                          ['$20.00', 2000], 
+                          ['$50.00', 5000], 
+                          ['$100.00', 10000], 
+                          ['$200.00', 20000], 
+                          ['$500.00', 50000],
+                          ['$1000.00', 100000]], 
+                          {}, 
+                          { class: 'form-control input-lg' } %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label><%= f.check_box :auto_top_up %> Auto top-up this amount when balance drops below $10</label>
+          </div>
+
+          <div>
+            <p>
+              <button type="submit" class="btn btn-primary btn-embossed btn-lg">
+                <i class='fa fa-plus-circle'></i> Purchase Top-Up
+              </button>
+            </p>
+            <p class="text-primary small">
+              Paying with
+              <strong>
+                <%= current_organisation.stripe_card['brand'] %> card ending in <%= current_organisation.stripe_card['last4'] %>
+              </strong>, 
+              expiring <%= "#{current_organisation.stripe_card['exp_month']}/#{current_organisation.stripe_card['exp_year']}" %>
+            </p>
+          </div>
+        <% end # form %>
+      <% else %>
+
+          <div>
+            <p class="alert alert-warning" role="alert">
+              You do not currently have any payment methods associated with your account.
+              <strong>Please add a credit or debit card.</strong>
+            </p>
+            <p>
+              <%= render partial: 'add_credit_card_button' %>
+            </p>
+          </div>
+
+      <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <%= render partial: 'manage_payment_method', object: current_organisation.stripe_card %>
+    <%= render partial: 'credit_history', object: @credit_transactions %>
+  </div>
+</div>

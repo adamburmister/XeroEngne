@@ -1,19 +1,18 @@
 module XeroEngine
   class Engine < ::Rails::Engine
 
-    initializer "xero_engine.include_concerns" do
-      ActiveSupport.on_load(:action_controller) do
-        include Concerns::Controllers
-      end
-      ActiveSupport.on_load(:active_record) do
-        include Concerns::Models
+    initializer "Require concerns path" do |app|
+      concerns_path = "app/controllers/concerns"
+
+      unless app.paths.keys.include?(concerns_path)
+        app.paths.add(concerns_path)
       end
     end
 
     # Autoload from lib directory
     config.autoload_paths << File.expand_path('../../', __FILE__)
 
-    initializer 'xero_engine.append_migrations' do |app|
+    initializer 'Add migrations to run' do |app|
       unless app.root.to_s == root.to_s
         config.paths["db/migrate"].expanded.each do |path|
           app.config.paths["db/migrate"].push(path)

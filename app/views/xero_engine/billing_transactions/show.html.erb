@@ -1,0 +1,24 @@
+<h1>
+  Credit Payment
+</h1>
+
+<div>
+  <% if @credit_transaction.completed? %>
+  <small class="label label-success">Paid</small>
+  <% else %>
+  <p>
+  <small class="label label-warning">Payment Processing</small>
+  <strong>This payment has not yet cleared.</strong> It may take a few minutes to process before becoming available on your account.</p>
+  <% end %>
+</div>
+
+<hr/>
+<p>
+  Topped up <%= humanized_money_with_symbol @credit_transaction.amount %> 
+  on <%= @credit_transaction.created_at.to_formatted_s(:long_ordinal) %>
+</p>
+
+<p>
+  <%= link_to 'Back to Payments', billing_transactions_path, class: 'btn btn-default' %>
+</p>
+<%#= @credit_transaction.inspect %>

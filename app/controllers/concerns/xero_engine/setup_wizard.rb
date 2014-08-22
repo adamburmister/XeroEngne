@@ -1,4 +1,4 @@
-module XeroEngine::Concerns::Controllers::SetupWizard
+module XeroEngine::SetupWizard
   extend ActiveSupport::Concern
   included do
     before_filter :ensure_setup_wizard_completed

@@ -1,0 +1,38 @@
+<%- content_for(:javascript) do %>
+<%= javascript_include_tag 'organisation_memberships' %>
+<%- end %>
+
+<div class="row">
+  <div class="col-xs-12">
+  
+  <% if @organisation_memberships.empty? %>
+  
+    <h2>Hi. Let's connect to your Xero Organisation.</h2>
+
+    <p>You need to grant us access to your Xero Organisation through Xero's secure login system.</p>
+    <p>Granting access ensures we can access up to date information for your company.</p>
+    <p>You can revoke access at any time from within the Xero Organisation's settings page.</p>
+  
+  <% else %>
+
+    <h1>Switch Organisation?</h1>
+    <hr>
+    <h3>Connected Xero organisations</h3>
+    <p>
+      Pick a connected Xero Organisation to work with, or 
+      <%= link_to "connect another Xero organisation", new_organisation_membership_path %>
+    </p>
+
+    <ul class="list-group">
+    <% @organisation_memberships.each do |m| %>
+      <li class="list-group-item">
+        <%= link_to m.organisation.name, m %>
+        <%= link_to 'Revoke', organisation_membership_path(m), method: :delete, data: {confirm: "Are you sure you want to revoke access to this organisation?"}, class: 'pull-right' %>
+      </li>
+    <% end %>
+    </ul>
+  <% end %>
+
+    <%= render partial: 'oauth_connect_btn', locals: { state: :new_connection } %>
+  </div>
+</div>

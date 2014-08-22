@@ -1,0 +1,13 @@
+<%= render partial: 'progress' %>
+
+<h1>Default print and mailing settings</h1>
+
+<%= simple_form_for current_organisation.print_settings, url: wizard_path do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.select :color, PrintSettings::color_options %>
+  <%= f.select :delivery, PrintSettings::delivery_options %>
+  <%= f.select :trigger, PrintSettings::trigger_options %>
+
+  <%= f.submit %>
+<% end %>

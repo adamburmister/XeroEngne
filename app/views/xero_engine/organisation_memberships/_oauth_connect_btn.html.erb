@@ -1,0 +1,25 @@
+<%- content_for(:javascript) do %>
+  <%= javascript_include_tag 'organisation_memberships' %>
+<%- end %>
+
+<div class="oauthConnectButtons">
+
+  <%- if state == :new_connection %>
+  <div class="connect">
+    <%= link_to "Connect to my Xero Organisation", new_organisation_membership_path, id: 'btnConnect', class: 'btn btn-primary' %>
+  </div>
+  <%- end %>
+
+  <%- if state == :reconnection %>
+  <div class="connect">
+    <%= link_to "Re-connect to my Xero Organisation", new_organisation_membership_path, id: 'btnConnect', class: 'btn btn-primary', data: {orgname: @organisation.name, shortcode: @organisation.short_code} %>
+    <%= link_to "Back", organisation_memberships_path, class: 'btn' %>
+  </div>
+  <%- end %>
+
+  <div class="waiting" style="display:none">
+    <%= image_tag("spinner.gif", class: 'pull-left') %>
+    <em>Waiting for connection to Xero</em>
+  </div>
+
+</div>

@@ -1,0 +1,11 @@
+<div class="jumbotron">
+
+    <div class="hero-copy">
+      <h1><%= ENV.fetch('SITE_NAME') %></h1>
+      <p>Print &amp; mail invoices to customers from your cloud accounting software, automatically.</p>  
+    </div>
+    
+    <%= link_to "Learn More", page_path(id: :about), class: 'btn btn-default btn-lg' %>
+    <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-default btn-lg' %>
+
+</div>

@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1>Access expired for <%= @organisation.name %></h1>
+    <p class="lead">Xero's API automatically expired our access.</p>
+
+    <p>Sorry, it looks like the access granted to us for this organisation has expired. This happens from time to time for security reasons.</p>
+    <p>You'll need to reauthorise your organisation to continue.
+      <span class="info-text">(Remember to pick the right organisation from the drop-down on the Xero site)</span>
+    </p>
+
+    <%= render partial: 'oauth_connect_btn', locals: { state: :reconnection } %>
+  </div>
+</div>

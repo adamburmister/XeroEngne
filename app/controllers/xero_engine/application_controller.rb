@@ -1,9 +1,11 @@
 module XeroEngine
   class ApplicationController < ActionController::Base
 
+    # Concerns
     include CurrentOrganisation
 
-    helper XeroEngine::ApplicationHelper
+    # Helpers
+    helper ApplicationHelper
 
     # Prevent CSRF attacks by raising an exception.
     # For APIs, you may want to use :null_session instead.

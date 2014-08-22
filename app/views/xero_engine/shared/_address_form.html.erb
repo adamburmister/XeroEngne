@@ -1,0 +1,12 @@
+<%= simple_form_for address_form, url: form_url, method: :put do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :address_line1, label: 'Street address' %>
+  <%= f.input :address_line2, label: 'Apt / Suite / Other' %>
+  <%= f.input :city %>
+  <%= f.input :state %>
+  <%= f.input :zip, label: 'Zip code' %>
+  <%= f.country_select(:country, only: ["US"]) %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,4 +1,4 @@
-module XeroEngine::Concerns::Controllers::XeroClient
+module XeroEngine::XeroClient
   extend ActiveSupport::Concern
 
   # @return {Xeroizer::PublicApplication} configured client with access to the #current_organisation
