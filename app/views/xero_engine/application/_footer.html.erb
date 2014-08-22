@@ -1,0 +1,40 @@
+<footer class="container footer">
+  <div class="footer-links row">
+    <hr/>
+    <ul class="col-xs-4 list-unstyled">
+      <li>
+        <h3 class="h6 text-uppercase"><%= ENV.fetch('SITE_NAME') %></h3>
+      </li>
+      <li>
+        <%= link_to 'Home', root_path %>
+      </li>
+      <li>
+        <%= link_to 'About', page_path(id: 'about') %>
+      </li>
+      <li>
+        <%= link_to 'Testimonials', page_path(id: 'testimonials') %>
+      </li>
+    </ul>
+    <ul class="col-xs-4 list-unstyled">
+      <li><h3 class="h6 text-uppercase">Contact Us</h3></li>
+      <li>
+        <a href="https://twitter.com/delivered">Twitter</a>
+      </li>
+      <li><a href="mailto:<%= ENV.fetch('CUSTOMER_SUPPORT_EMAIL') %>">Support</a></li>
+    </ul>
+    <ul class="col-xs-4 list-unstyled">
+      <li>
+        <h3 class="h6 text-uppercase">Legal</h3>
+      </li>
+      <li>
+        <%= link_to 'Terms and Conditions', page_path(id: 'terms') %>
+      </li>
+      <li>
+        <%= link_to 'Privacy Policy', page_path(id: 'privacy') %>
+      </li>
+    </ul>
+  </div>
+  <div class="copyright row">
+    <p class="col-lg-12 text-muted">Copyright <%= "#{ENV.fetch('SITE_NAME')} #{DateTime.now.year}" %></p>
+  </div>
+</footer>

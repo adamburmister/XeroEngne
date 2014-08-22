@@ -12,3 +12,12 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+
+gem 'sidetiq', github: 'tobiassvn/sidetiq'
+gem "xeroizer", "~> 2.15.5", github: "waynerobinson/xeroizer"
+gem 'country_select', github: 'stefanpenner/country_select'
+
+group :staging, :production do
+  gem 'rails_12factor'
+  gem "newrelic_rpm", ">= 3.7.3"
+end
