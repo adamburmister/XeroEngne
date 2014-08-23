@@ -4,6 +4,11 @@ module XeroEngine
   class Engine < ::Rails::Engine
     isolate_namespace XeroEngine
 
+    # Skip the ensure_current_org filter within all devise controllers
+    config.to_prepare do
+      Devise::DeviseController.skip_before_filter :ensure_current_organisation
+    end
+
     # Enable High Voltage routes to extend our routes
     HighVoltage.parent_engine = XeroEngine::Engine
 

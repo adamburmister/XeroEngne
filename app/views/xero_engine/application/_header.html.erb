@@ -20,12 +20,12 @@
           <ul class="dropdown-menu" role="menu">
             <% current_user.organisation_memberships.each do |m| %>
             <li>
-              <%= link_to m.organisation.name, organisation_membership_path(m) %>
+              <%= link_to m.organisation.name, xero_engine.organisation_membership_path(m) %>
             </li>
             <% end %>
             <li class="divider"></li>
             <li>
-              <%= link_to 'Manage', organisation_memberships_path %>
+              <%= link_to 'Manage', xero_engine.organisation_memberships_path %>
             </li>
           </ul>
         </li>
