@@ -2,10 +2,13 @@ module XeroEngine
   class Engine < ::Rails::Engine
 
     initializer "Require concerns path" do |app|
-      concerns_path = "app/controllers/concerns"
-
-      unless app.paths.keys.include?(concerns_path)
-        app.paths.add(concerns_path)
+      [ "app/controllers/concerns",
+        "app/workers/concerns",
+        "app/models/concerns"
+      ].each do |concerns_path|
+        unless app.paths.keys.include?(concerns_path)
+          app.paths.add(concerns_path)
+        end
       end
     end
 

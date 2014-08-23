@@ -1,7 +1,11 @@
 require 'sidetiq/web'
 
 XeroEngine::Engine.routes.draw do
-  devise_for :users, path: 'user', sign_out_via: [ :get, :post, :delete ], :controllers => {:registrations => "xero_engine/registrations"}
+  devise_for :users,
+             class_name: "XeroEngine::User", module: :devise,
+             path: 'user',
+             sign_out_via: [ :get, :post, :delete ],
+             controllers: { registrations: "xero_engine/registrations" }
 
   resources :organisation_memberships, path: :connections do
     member do

@@ -1,9 +1,9 @@
 require 'xero_engine/engine'
 
 module XeroEngine
+  require 'devise'
   require 'xeroizer'
   require 'jquery-rails'
-  require 'devise'
   require 'high_voltage'
   require 'money-rails'
   require 'rack/timeout'
@@ -22,4 +22,6 @@ module XeroEngine
 
   # Enable High Voltage routes to extend our routes
   HighVoltage.parent_engine = XeroEngine::Engine
+
+
 end

@@ -54,6 +54,7 @@ PATH
       uglifier
       unicorn
       wicked
+      xeroizer
 
 GEM
   remote: https://rubygems.org/
