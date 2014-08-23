@@ -2,12 +2,21 @@ require 'high_voltage'
 
 module XeroEngine
   class Engine < ::Rails::Engine
+    isolate_namespace XeroEngine
 
     # Enable High Voltage routes to extend our routes
     HighVoltage.parent_engine = XeroEngine::Engine
 
     # Autoload from lib directory
     config.autoload_paths << File.expand_path('../../', __FILE__)
+
+    rake_tasks do
+      Dir[File.join(File.dirname(__FILE__), '../tasks/*.rake')].each { |f| load f }
+    end
+
+    initializer 'Precompile hook', group: :all do |app|
+      app.config.assets.precompile += %w()
+    end
 
     initializer "Require concerns path" do |app|
       [ "app/controllers/concerns",
@@ -28,7 +37,6 @@ module XeroEngine
       end
     end
 
-    isolate_namespace XeroEngine
   end
 end
 

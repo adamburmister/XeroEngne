@@ -1,6 +1,5 @@
 module XeroEngine
   class HomeController < ApplicationController
-    include SetupWizard
 
     # Render the marketing page, or if logged in go to the dashboard
     def index
