@@ -1,13 +1,13 @@
 <% if user_signed_in? %>
   <% if current_organisation.present? %>
   <li>
-    <%= link_to "<span class='badge badge-credit'>#{humanized_money_with_symbol current_organisation.credit_amount}</span> Credit".html_safe, 
-                billing_transactions_path %>
+    <%= link_to "<span class='badge badge-credit'>#{humanized_money_with_symbol current_organisation.credit_amount}</span> Credit".html_safe,
+                xero_engine.billing_transactions_path %>
   </li>
   <% end %>
-  <li><%= link_to "Account", edit_user_registration_path %></li>
-  <li><%= link_to 'Logout', destroy_user_session_path %></li>
+  <li><%= link_to "Account", xero_engine.edit_user_registration_path %></li>
+  <li><%= link_to 'Logout', xero_engine.destroy_user_session_path %></li>
 <% else %>
-  <li><%= link_to 'Login', new_user_session_path %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path %></li>
+  <li><%= link_to 'Login', xero_engine.new_user_session_path %></li>
+  <li><%= link_to 'Sign up', xero_engine.new_user_registration_path %></li>
 <% end %>

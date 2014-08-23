@@ -1,5 +1,13 @@
+require 'high_voltage'
+
 module XeroEngine
   class Engine < ::Rails::Engine
+
+    # Enable High Voltage routes to extend our routes
+    HighVoltage.parent_engine = XeroEngine::Engine
+
+    # Autoload from lib directory
+    config.autoload_paths << File.expand_path('../../', __FILE__)
 
     initializer "Require concerns path" do |app|
       [ "app/controllers/concerns",
@@ -11,9 +19,6 @@ module XeroEngine
         end
       end
     end
-
-    # Autoload from lib directory
-    config.autoload_paths << File.expand_path('../../', __FILE__)
 
     initializer 'Add migrations to run' do |app|
       unless app.root.to_s == root.to_s

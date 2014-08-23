@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to ENV.fetch('SITE_NAME'), main_app.root_path, class: 'navbar-brand' %>
+      <%= link_to ENV.fetch('SITE_NAME'), xero_engine.root_path, class: 'navbar-brand' %>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -35,9 +35,9 @@
         <% end %>
       <%- end %>
       <% else %>
-        <li><%= link_to 'Home', main_app.root_path %></li>
-        <li><%= link_to 'About', page_path(id: 'about') %></li>
-        <li><%= link_to 'Testimonials', page_path(id: 'testimonials') %></li>
+        <li><%= link_to 'Home', xero_engine.root_path %></li>
+        <li><%= link_to 'About', xero_engine.page_path(id: 'about') %></li>
+        <li><%= link_to 'Testimonials', xero_engine.page_path(id: 'testimonials') %></li>
       <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
