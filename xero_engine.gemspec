@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.homepage    = "http://www.burmister.com"
   s.summary     = "Xero partner addon Rails Engine."
   s.description = "Xero partner addon Rails Engine."
-  s.license     = "© Adam Burmister 2014, All rights reserved"
+  s.license     = "© Adam Burmister 2014, All Rights Reserved"
 
   s.files = Dir["{app,config,db,lib}/**/*", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
@@ -67,4 +67,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "timecop"
   s.add_development_dependency "webmock"
   s.add_development_dependency 'simplecov'
+
+  # s.add_development_dependency "sqlite3"
 end

@@ -1,3 +1,1 @@
-= XeroEngine
-
-This project rocks and uses MIT-LICENSE.
+# XeroEngine
