@@ -2,8 +2,8 @@ module XeroEngine::CurrentOrganisation
   extend ActiveSupport::Concern
 
   included do
-    before_filter :ensure_current_organisation
     before_filter :redirect_root_to_dashboard
+    before_filter :ensure_current_organisation
     helper_method :current_organisation, :current_organisation?, :current_organisation_membership
   end
 
@@ -59,7 +59,7 @@ module XeroEngine::CurrentOrganisation
   end
 
   def redirect_root_to_dashboard
-    if request.path == root_path && user_signed_in?
+    if request.path == '/' && user_signed_in?
       if current_organisation?
         redirect_to dashboard_path
       else
