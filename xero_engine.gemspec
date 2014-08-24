@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency "coffee-rails"
   s.add_dependency "email_validator"
   s.add_dependency "flutie"
-  s.add_dependency "high_voltage"
+  s.add_dependency "high_voltage", '~> 2.2.1'
   s.add_dependency "jquery-rails"
   s.add_dependency "pg"
   s.add_dependency "rack-timeout"
@@ -34,7 +34,7 @@ Gem::Specification.new do |s|
   s.add_dependency "title"
   s.add_dependency "uglifier"
   s.add_dependency "unicorn"
-  s.add_dependency "xeroizer"
+  s.add_dependency "xeroizer", "~> 2.15.5"
 
   # Add on's
   s.add_dependency "devise" # authentication

@@ -5,20 +5,13 @@
       <li>
         <h3 class="h6 text-uppercase"><%= ENV.fetch('SITE_NAME') %></h3>
       </li>
-      <li>
-        <%= link_to 'Home', xero_engine.root_path %>
-      </li>
-      <li>
-        <%= link_to 'About', xero_engine.page_path(id: 'about') %>
-      </li>
-      <li>
-        <%= link_to 'Testimonials', xero_engine.page_path(id: 'testimonials') %>
-      </li>
+      <%# Customise the footer site content links by editing `footer_page_links` template %>
+      <%= render partial: 'footer_page_links' %>
     </ul>
     <ul class="col-xs-4 list-unstyled">
       <li><h3 class="h6 text-uppercase">Contact Us</h3></li>
       <li>
-        <a href="https://twitter.com/delivered">Twitter</a>
+        <a href="https://twitter.com/<%= ENV.fetch('CUSTOMER_SUPPORT_TWITTER') %>">Twitter</a>
       </li>
       <li><a href="mailto:<%= ENV.fetch('CUSTOMER_SUPPORT_EMAIL') %>">Support</a></li>
     </ul>

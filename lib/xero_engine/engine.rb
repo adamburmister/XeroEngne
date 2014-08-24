@@ -1,5 +1,3 @@
-require 'high_voltage'
-
 module XeroEngine
   class Engine < ::Rails::Engine
     isolate_namespace XeroEngine
@@ -9,10 +7,6 @@ module XeroEngine
       Devise::DeviseController.skip_before_filter :ensure_current_organisation
     end
 
-    # Enable High Voltage routes to extend our routes
-    HighVoltage.parent_engine = XeroEngine::Engine
-
-    # Autoload from lib directory
     config.autoload_paths << File.expand_path('../../', __FILE__)
 
     rake_tasks do

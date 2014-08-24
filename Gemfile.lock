@@ -1,4 +1,16 @@
 GIT
+  remote: git://github.com/adamburmister/xeroizer.git
+  revision: 5fdf67645d3e289da694a44147189cb979336f54
+  specs:
+    xeroizer (2.15.5)
+      activesupport
+      builder (>= 2.1.2)
+      i18n
+      nokogiri
+      oauth (= 0.4.5)
+      tzinfo
+
+GIT
   remote: git://github.com/stefanpenner/country_select.git
   revision: 89e0e89febd192896d2cf5d7c0256389ff551db4
   specs:
@@ -14,18 +26,6 @@ GIT
       ice_cube (~> 0.12.0)
       sidekiq (>= 2.16.0)
 
-GIT
-  remote: git://github.com/waynerobinson/xeroizer.git
-  revision: 5fdf67645d3e289da694a44147189cb979336f54
-  specs:
-    xeroizer (2.15.5)
-      activesupport
-      builder (>= 2.1.2)
-      i18n
-      nokogiri
-      oauth (= 0.4.5)
-      tzinfo
-
 PATH
   remote: .
   specs:
@@ -35,7 +35,7 @@ PATH
       devise
       email_validator
       flutie
-      high_voltage
+      high_voltage (~> 2.2.1)
       jquery-rails
       money-rails
       pg
@@ -53,7 +53,7 @@ PATH
       title
       uglifier
       unicorn
-      xeroizer
+      xeroizer (~> 2.15.5)
 
 GEM
   remote: https://rubygems.org/
@@ -191,7 +191,7 @@ GEM
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.5)
-    pundit (0.2.3)
+    pundit (0.3.0)
       activesupport (>= 3.0.0)
     rack (1.5.2)
     rack-protection (1.5.3)
@@ -353,4 +353,4 @@ DEPENDENCIES
   timecop
   webmock
   xero_engine!
-  xeroizer (~> 2.15.5)!
+  xeroizer!

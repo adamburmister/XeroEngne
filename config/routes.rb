@@ -1,6 +1,7 @@
 require 'sidetiq/web'
 
 XeroEngine::Engine.routes.draw do
+
   devise_for :users,
              class_name: "XeroEngine::User", module: :devise,
              path: 'user',
@@ -14,8 +15,6 @@ XeroEngine::Engine.routes.draw do
   end
   get '/oauth/callback', to: 'organisation_memberships#create'
 
-  resources :after_signup, path: 'setup'
-
   resources :billing_transactions, path: 'billing'
   resources :payment_methods, only: [ :create, :destroy ]
 
@@ -23,6 +22,6 @@ XeroEngine::Engine.routes.draw do
     resource :print_settings, path: :settings
   end
 
-  get '/dashboard', to: 'dashboard#index'
-  root :to => "home#index"
+  get '/dashboard', to: 'dashboard#index', as: :dashboard
+
 end

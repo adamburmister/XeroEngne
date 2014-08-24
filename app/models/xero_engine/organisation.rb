@@ -4,8 +4,8 @@ module XeroEngine
 
     # AR callbacks
     after_create :after_create_callback
-    after_initialize :after_initialize
-    before_destroy :before_destroy
+    # after_initialize :after_initialize
+    # before_destroy :before_destroy
 
     # Relationships
     has_many :organisation_memberships
@@ -111,18 +111,18 @@ module XeroEngine
 
     # AR callbacks
 
-    def after_initialize
-      build_address if address.nil?
-    end
+    # def after_initialize
+    #   build_address if address.nil?
+    # end
 
     def after_create_callback
-      self.create_print_settings
+      # self.create_print_settings
       OrganisationPostCreationWorker.perform_async(self.short_code)
     end
 
-    def before_destroy
-      true # nothing for now
-    end
+    # def before_destroy
+    #   true # nothing for now
+    # end
 
     # Stripe webhook callbacks
 
