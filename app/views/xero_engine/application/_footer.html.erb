@@ -3,7 +3,7 @@
     <hr/>
     <ul class="col-xs-4 list-unstyled">
       <li>
-        <h3 class="h6 text-uppercase"><%= ENV.fetch('SITE_NAME') %></h3>
+        <h3 class="h6 text-uppercase"><%= site_name %></h3>
       </li>
       <%# Customise the footer site content links by editing `footer_page_links` template %>
       <%= render partial: 'footer_page_links' %>
@@ -28,6 +28,6 @@
     </ul>
   </div>
   <div class="copyright row">
-    <p class="col-lg-12 text-muted">Copyright <%= "#{ENV.fetch('SITE_NAME')} #{DateTime.now.year}" %></p>
+    <p class="col-lg-12 text-muted">Copyright <%= "#{site_name} #{DateTime.now.year}" %></p>
   </div>
 </footer>

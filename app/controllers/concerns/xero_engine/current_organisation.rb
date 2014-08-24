@@ -66,6 +66,7 @@ module XeroEngine::CurrentOrganisation
         redirect_to organisation_memberships_path
       end
     end
+    false
   end
 
   private

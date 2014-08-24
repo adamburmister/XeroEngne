@@ -1,0 +1,25 @@
+<div class="panel-group" id="userAccess">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="btn-block" data-toggle="collapse" href="#userAccessCollapsible">
+          <i class="fa fa-angle-down pull-right"></i> Users
+        </a>
+      </h4>
+    </div>
+    <div id="userAccessCollapsible" class="panel-collapse collapse">
+      <div class="panel-body">
+        <p class="text-muted small">
+          The following users have access to this Xero organisation within <%= site_name %>, <%= user_access.name %>.
+        </p>
+        <ul class="list-unstyled">
+          <%- user_access.users.each do |u| %>
+          <li class="accesslevel-<%= u.role %>">
+            <%= "#{u.name} (#{u.email})" %>
+          </li>
+          <%- end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

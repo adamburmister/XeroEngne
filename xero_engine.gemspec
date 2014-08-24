@@ -53,10 +53,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'better_errors'
   s.add_development_dependency 'binding_of_caller'
   s.add_development_dependency "awesome_print"
-  # s.add_development_dependency "byebug"
   s.add_development_dependency "dotenv-rails"
   s.add_development_dependency "factory_girl_rails"
-  # s.add_development_dependency "pry-rails"
   s.add_development_dependency "rspec-rails", "~> 3.0.0"
   s.add_development_dependency "capybara-webkit", ">= 1.2.0"
   s.add_development_dependency "database_cleaner"

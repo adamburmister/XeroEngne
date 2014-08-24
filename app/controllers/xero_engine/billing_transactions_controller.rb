@@ -29,7 +29,8 @@ module XeroEngine
         flash[:success] = "Thank you. You've successfully topped up your account $#{@credit_transaction.amount}."
         redirect_to @credit_transaction
       else
-        render :new
+        flash[:error] = "Sorry, there was a problem billing your stored payment card. No payment was taken."
+        redirect_to :back
       end
     end
 

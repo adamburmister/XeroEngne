@@ -20,7 +20,7 @@
       <% if current_organisation.stripe_card %>
         <%= simple_form_for @credit_transaction do |f| %>
           <%= f.error_notification %>
-          <%= render partial: 'shared/error_messages', object: @credit_transaction %>
+          <%= render partial: 'xero_engine/shared/error_messages', object: @credit_transaction %>
           <h2 class="h4">Top up your account&hellip;</h2>
 
           <div class="form-group row">
@@ -78,5 +78,6 @@
   <div class="col-md-4">
     <%= render partial: 'manage_payment_method', object: current_organisation.stripe_card %>
     <%= render partial: 'credit_history', object: @credit_transactions %>
+    <%= render partial: 'user_access', object: current_organisation %>
   </div>
 </div>

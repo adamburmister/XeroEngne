@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <% if current_organisation.present? %>
   <li>
-    <%= link_to "<span class='badge badge-credit'>#{humanized_money_with_symbol current_organisation.credit_amount}</span> Credit".html_safe,
+    <%= link_to "Organisation <span class='badge badge-credit'>#{humanized_money_with_symbol current_organisation.credit_amount}</span>".html_safe,
                 xero_engine.billing_transactions_path %>
   </li>
   <% end %>

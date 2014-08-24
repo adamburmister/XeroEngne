@@ -17,10 +17,6 @@ module XeroEngine
 
     # Validations
     validates :created_by, presence: true
-    validates :stripe_charge_id, presence: {
-      if: Proc.new{|t| t.credit?},
-      message: 'must have an associated stripe charge id'
-    }
 
     def self.credits
       where(transaction_type: 0).order(created_at: :desc)
@@ -31,7 +27,7 @@ module XeroEngine
     end
 
     def stripe_charge
-      Stripe::Charge.retrieve(stripe_charge_id)
+      @stripe_charge ||= Stripe::Charge.retrieve(stripe_charge_id)
     end
 
     def stripe_charge=(charge)
@@ -39,7 +35,9 @@ module XeroEngine
     end
 
     # Create the charge on Stripe's servers - this will charge the user's card
+    # On return of the creation store the ID
     def attempt_charge
+      Rails.logger.info "Attempting charge #{self.inspect}"
       self.stripe_charge = create_stripe_charge
     end
 
@@ -50,7 +48,7 @@ module XeroEngine
       if stripe_charge_id && stripe_charge.paid
         Rails.logger.error "Charge #{stripe_charge_id} already paid"
         errors.add(:base, 'This billing transaction has already been charged successfully')
-        return
+        return stripe_charge
       end
 
       charge = nil
@@ -100,7 +98,7 @@ module XeroEngine
         errors.add(:base, "There was a problem connecting to the payment service. Please send customer support an email at #{ENV.fetch('CUSTOMER_SUPPORT_EMAIL')}")
       end
 
-      charge
+      charge # Return charge, who's ID is later stored against the stripe_charge_id attr
     end
 
     # Webhook callbacks
