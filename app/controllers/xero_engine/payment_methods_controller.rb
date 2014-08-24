@@ -13,14 +13,14 @@ module XeroEngine
         current_organisation.create_stripe_card(params[:stripeToken])
       end
 
-      flash[:success] = "You have successfully added a new payment method to your account."
-      redirect_to :back
+      message = I18n.t 'payment_method.creation.success', :scope => [:xero_engine]
+      redirect_to :back, notice: message
     end
 
     def destroy
       current_organisation.stripe_card.delete if current_organisation.stripe_card
-      flash[:success] = "You have successfully removed the previous payment method."
-      redirect_to :back
+      message = I18n.t 'payment_method.destruction.success', :scope => [:xero_engine]
+      redirect_to :back, notice: message
     end
 
   end

@@ -20,7 +20,7 @@ module XeroEngine
 
     def warn_no_stripe_card_payment_method
       if current_organisation && current_organisation.stripe_card.nil?
-        flash[:warning] = "<strong>You need to add a payment method for this account.</strong> Please <a href='/billing'>add payment card details</a>."
+        flash[:warning] = I18n.t 'xero_engine.payment_method.missing'
       end
     end
 

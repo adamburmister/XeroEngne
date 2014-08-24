@@ -16,3 +16,17 @@ en:
         "%B %d"
 
   xero_engine:
+    organisation_memberships:
+      select_organisation: Please pick a Xero Organisation to continue.
+    payment_method:
+      missing: "<strong>You need to add a payment method for this account.</strong> Please <a href='/billing'>add payment card details</a>."
+      creation:
+        success: You have successfully added a new payment method to your account.
+        error: Sorry, there was a problem adding that payment method. Please contact customer support.
+      destruction:
+        success: You have successfully removed the previous payment method.
+        error: Sorry, there was a problem removing that payment method. Please contact customer support.
+    billing_transaction:
+      creation:
+        success: Thank you. You've successfully topped up your account %{amount}
+        error: Sorry, there was a problem billing your stored payment card. No payment was taken.

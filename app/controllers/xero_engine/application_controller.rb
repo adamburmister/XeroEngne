@@ -1,6 +1,8 @@
 module XeroEngine
   class ApplicationController < ActionController::Base
 
+    # layout 'xero_engine/application'
+
     # Concerns
     include CurrentOrganisation
 

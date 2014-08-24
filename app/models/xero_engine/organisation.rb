@@ -16,6 +16,7 @@ module XeroEngine
 
     # Validations
     validates :name, presence: true
+    validates :short_code, presence: true
 
     # Attribtues
     attr_accessor :stripe_token, :coupon
