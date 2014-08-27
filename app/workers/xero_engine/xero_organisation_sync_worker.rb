@@ -3,7 +3,7 @@ module XeroEngine
     include Sidekiq::Worker
     include XeroClientConcern
 
-    sidekiq_options retry: 3, backtrace: true
+    sidekiq_options retry: 1, backtrace: true
 
     def perform(short_code)
       membership = OrganisationMembership.find_by_short_code(short_code)
