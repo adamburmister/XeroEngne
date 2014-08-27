@@ -37,10 +37,11 @@ module XeroEngine
     end
 
     def show
+      # Switch organisations
       @membership = current_user.organisation_memberships.find(params[:id])
       authorize @membership
-
       set_current_organisation_short_code @membership.short_code
+      flash.clear # Start with a new slate for this org
       redirect_to root_path
     end
 
