@@ -105,7 +105,7 @@ module XeroEngine
 
     after_charge_succeeded! do |charge|
       billing_transaction = BillingTransaction.find_by_stripe_charge_id(charge.id)
-      if billing_transaction.credit?
+      if billing_transaction && billing_transaction.credit?
         organisation = billing_transaction.organisation
         Rails.logger.info "Charge succeeded for customer #{organisation.name} (#{organisation.id}), amount of $#{charge.amount / 100} (#{charge.id})"
         billing_transaction.update(completed: charge.paid)
@@ -114,7 +114,7 @@ module XeroEngine
 
     after_charge_failed! do |charge|
       billing_transaction = BillingTransaction.find_by_stripe_charge_id(charge.id)
-      if billing_transaction.credit?
+      if billing_transaction && billing_transaction.credit?
         Rails.logger.info "Charge failed for customer #{organisation.name} (#{organisation.id}), amount of $#{charge.amount / 100} (#{charge.id})"
         billing_transaction.update(completed: charge.paid)
       end
