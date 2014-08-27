@@ -1,4 +1,16 @@
 GIT
+  remote: git://github.com/adamburmister/xeroizer.git
+  revision: bbc5989d9efcc93e4d225e18002c0b6d1b4a10db
+  specs:
+    xeroizer (2.15.5)
+      activesupport (>= 4.1.5)
+      builder (>= 2.1.2)
+      i18n
+      nokogiri
+      oauth (>= 0.4.5)
+      tzinfo
+
+GIT
   remote: git://github.com/stefanpenner/country_select.git
   revision: 89e0e89febd192896d2cf5d7c0256389ff551db4
   specs:
@@ -41,17 +53,6 @@ PATH
       title
       uglifier
       unicorn
-
-PATH
-  remote: ../xeroizer
-  specs:
-    xeroizer (2.15.5)
-      activesupport (>= 4.1.5)
-      builder (>= 2.1.2)
-      i18n
-      nokogiri
-      oauth (>= 0.4.5)
-      tzinfo
 
 GEM
   remote: https://rubygems.org/
