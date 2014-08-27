@@ -28,5 +28,5 @@ en:
         error: Sorry, there was a problem removing that payment method. Please contact customer support.
     billing_transaction:
       creation:
-        success: Thank you. You've successfully topped up your account %{amount}
+        success: Thank you. You've successfully topped up your account $%{amount}
         error: Sorry, there was a problem billing your stored payment card. No payment was taken.

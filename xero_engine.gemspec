@@ -30,11 +30,11 @@ Gem::Specification.new do |s|
   s.add_dependency "recipient_interceptor"
   s.add_dependency 'bootstrap-sass', '~> 3.2.0'
   s.add_dependency "sass-rails", "~> 4.0.3"
-  s.add_dependency "simple_form"
+  s.add_dependency "simple_form", "~> 3.1.0.rc2"
   s.add_dependency "title"
   s.add_dependency "uglifier"
   s.add_dependency "unicorn"
-  s.add_dependency "xeroizer", "~> 2.15.5"
+  # s.add_dependency "xeroizer", "~> 2.15.5"
 
   # Add on's
   s.add_dependency "devise" # authentication

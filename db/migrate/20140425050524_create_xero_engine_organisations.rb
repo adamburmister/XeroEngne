@@ -15,9 +15,6 @@ class CreateXeroEngineOrganisations < ActiveRecord::Migration
       # Xero worker
       t.datetime :last_synced_at
 
-      # Setup status
-      t.integer  :furthest_setup_step, default: -1, null: false
-
       # Billing
       t.string   :stripe_customer_id
       t.integer  :auto_top_up_amount

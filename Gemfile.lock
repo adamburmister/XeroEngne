@@ -1,16 +1,4 @@
 GIT
-  remote: git://github.com/adamburmister/xeroizer.git
-  revision: 5fdf67645d3e289da694a44147189cb979336f54
-  specs:
-    xeroizer (2.15.5)
-      activesupport
-      builder (>= 2.1.2)
-      i18n
-      nokogiri
-      oauth (= 0.4.5)
-      tzinfo
-
-GIT
   remote: git://github.com/stefanpenner/country_select.git
   revision: 89e0e89febd192896d2cf5d7c0256389ff551db4
   specs:
@@ -47,13 +35,23 @@ PATH
       sass-rails (~> 4.0.3)
       sidekiq
       sidekiq-failures
-      simple_form
+      simple_form (~> 3.1.0.rc2)
       sinatra (>= 1.3.0)
       stripe-rails
       title
       uglifier
       unicorn
-      xeroizer (~> 2.15.5)
+
+PATH
+  remote: ../xeroizer
+  specs:
+    xeroizer (2.15.5)
+      activesupport (>= 4.1.5)
+      builder (>= 2.1.2)
+      i18n
+      nokogiri
+      oauth (>= 0.4.5)
+      tzinfo
 
 GEM
   remote: https://rubygems.org/
@@ -187,7 +185,7 @@ GEM
     newrelic_rpm (3.9.2.239)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
-    oauth (0.4.5)
+    oauth (0.4.7)
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.5)
@@ -229,10 +227,10 @@ GEM
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    roadie (3.0.0)
+    roadie (3.0.1)
       css_parser (~> 1.3.4)
       nokogiri (~> 1.6.0)
-    roadie-rails (1.0.2)
+    roadie-rails (1.0.3)
       rails (>= 3.0, < 4.2)
       roadie (~> 3.0)
     rspec-core (3.0.4)
@@ -268,7 +266,7 @@ GEM
       redis-namespace (>= 1.3.1)
     sidekiq-failures (0.4.3)
       sidekiq (>= 2.16.0)
-    simple_form (3.0.2)
+    simple_form (3.1.0.rc2)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
     simplecov (0.9.0)

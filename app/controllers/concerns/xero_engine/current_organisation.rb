@@ -1,4 +1,5 @@
 module XeroEngine::CurrentOrganisation
+
   extend ActiveSupport::Concern
 
   included do
@@ -15,12 +16,12 @@ module XeroEngine::CurrentOrganisation
   # @return {OrganisationMembership}
   def current_organisation_membership
     @current_organisation_membership ||= if current_user && has_current_organisation?
-      org = current_user.organisation_memberships.find_by_short_code current_organisation_short_code
-      set_current_organisation_short_code nil if org.nil?
-      org
-    else
-      nil
-    end
+                                           org = current_user.organisation_memberships.find_by_short_code current_organisation_short_code
+                                           set_current_organisation_short_code nil if org.nil?
+                                           org
+                                         else
+                                           nil
+                                         end
   end
 
   # Session state for the current organisation ID
@@ -45,10 +46,9 @@ module XeroEngine::CurrentOrganisation
   # ---- Filters ----
 
   def ensure_current_organisation
-    if signed_in? && current_user
-      if current_organisation_short_code.blank?
-        num_of_orgs = current_user.organisation_memberships.size
-        if num_of_orgs == 1
+    if user_signed_in?
+      if current_organisation_short_code.blank? && current_organisation
+        if current_user.organisation_memberships.count == 1
           set_current_organisation_short_code current_user.organisation_memberships.first.short_code
         else
           message = I18n.t 'xero_engine.organisation_memberships.select_organisation'

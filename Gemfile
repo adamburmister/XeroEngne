@@ -14,7 +14,7 @@ gemspec
 # gem 'debugger'
 
 gem 'sidetiq', github: 'tobiassvn/sidetiq'
-gem "xeroizer", github: "adamburmister/xeroizer"
+gem "xeroizer", path: "../xeroizer" #github: "adamburmister/xeroizer"
 gem 'country_select', github: 'stefanpenner/country_select'
 
 group :staging, :production do

@@ -18,7 +18,6 @@ module XeroEngine
     validates :name, presence: true
     validates :short_code, presence: true
 
-    # Attribtues
     attr_accessor :stripe_token, :coupon
 
     # Is org actively being used within our app? We can use this information
@@ -26,11 +25,6 @@ module XeroEngine
     # for it.
     def active?
       user_ids.any?
-    end
-
-    # @return {boolean} Has the user completed the setup wizard for the current org
-    def setup_completed?
-      furthest_setup_step >= AfterSignupController::STEPS.length - 1
     end
 
     def has_credit?(cost=0)
@@ -127,21 +121,21 @@ module XeroEngine
 
     # Stripe webhook callbacks
 
-    after_customer_created! do |customer, event|
-      # Nothing
-    end
+    # after_customer_created! do |customer, event|
+    #   # Nothing
+    # end
 
     after_customer_deleted! do |customer, event|
       Organisation.find(stripe_customer_id: customer.id).update(stripe_customer_id: nil)
     end
 
-    after_customer_card_deleted! do |customer, event|
-      #
-    end
-
-    after_customer_card_updated! do |customer, event|
-      # Nothing
-    end
+    # after_customer_card_deleted! do |customer, event|
+    #   #
+    # end
+    #
+    # after_customer_card_updated! do |customer, event|
+    #   # Nothing
+    # end
 
     after_stripe_event do |target, event|
       Rails.logger.info "Stripe event: \n" + target.inspect + "\n" + event.inspect

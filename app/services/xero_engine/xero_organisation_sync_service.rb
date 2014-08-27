@@ -1,6 +1,5 @@
 module XeroEngine
   class XeroOrganisationSyncService
-    # Attrs not update
     @@permitted_latest_org_attributes = [
       :name, :legal_name, :version, :organisation_type, :base_currency,
       :country_code, :is_demo_company, :organisation_status

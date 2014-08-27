@@ -1,8 +1,6 @@
 module XeroEngine
   class ApplicationController < ActionController::Base
 
-    # layout 'xero_engine/application'
-
     # Concerns
     include CurrentOrganisation
 
@@ -19,6 +17,10 @@ module XeroEngine
     end
 
     private
+
+    def after_sign_up_path_for(resource)
+      xero_engine.new_organisation_membership_path
+    end
 
     def after_sign_in_path_for(resource)
       session["user_return_to"] || xero_engine.root_path
