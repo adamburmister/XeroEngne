@@ -57,12 +57,12 @@ module XeroEngine
       @membership = current_user.organisation_memberships.find(params[:id])
       authorize @membership
 
-      msg = "You have successfully revoked access to your Xero organisation #{@membership.organisation.name}"
+      flash[:success] = I18n.t 'organisation_membership.destruction.success', organisation_name: @membership.organisation.name, :scope => [:xero_engine]
       @membership.destroy!
 
       set_current_organisation_short_code nil
 
-      redirect_to root_path, notice: msg
+      redirect_to root_path
     end
 
   protected

@@ -26,8 +26,8 @@ module XeroEngine
           current_organisation.update(auto_top_up_amount: billing_transaction_params[:amount_cents])
         end
 
-        message = I18n.t 'billing_transaction.creation.success', amount: @credit_transaction.amount, :scope => [:xero_engine]
-        redirect_to @credit_transaction, notice: message
+        flash[:success] = I18n.t 'billing_transaction.creation.success', amount: @credit_transaction.amount, :scope => [:xero_engine]
+        redirect_to @credit_transaction
       else
         message = I18n.t 'billing_transaction.creation.error', :scope => [:xero_engine]
         redirect_to :back, alert: message
