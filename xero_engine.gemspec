@@ -43,6 +43,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'sinatra', '>= 1.3.0'
   s.add_dependency 'sidekiq'
   s.add_dependency 'sidekiq-failures'
+  s.add_dependency 'sidekiq_mailer'
   s.add_dependency 'money-rails'
   s.add_dependency 'roadie-rails' # email style inlining
 

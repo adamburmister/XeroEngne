@@ -9,5 +9,9 @@ module XeroEngine
       ENV.fetch('SITE_NAME') || '[.env SITE_NAME not set]'
     end
 
+    def site_url
+      ENV['SITE_URL']
+    end
+
   end
 end

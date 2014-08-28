@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title><%= @page_title %></title>
-<%= stylesheet_link_tag "mailer" %>
+<%= stylesheet_link_tag "xero_engine/mailer" %>
 </head>
 
 <body>
@@ -17,14 +17,12 @@
 				<table class="main" width="100%" cellpadding="0" cellspacing="0">
 					<tr>
 						<td class="alert alert-<%= @header_bg || 'warning' %>">
-							<%= @header %>
+							<%= yield :page_header %>
 						</td>
 					</tr>
 					<tr>
 						<td class="content-wrap">
-							<table width="100%" cellpadding="0" cellspacing="0">
-								<%= @body_table_rows %>
-							</table>
+              <%= yield %>
 						</td>
 					</tr>
 				</table>
@@ -36,7 +34,8 @@
 							</td>
 						</tr>
 					</table>
-				</div></div>
+				</div>
+      </div>
 		</td>
 		<td></td>
 	</tr>

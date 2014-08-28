@@ -147,7 +147,7 @@ a {
   cursor: pointer;
   display: inline-block;
   border-radius: 5px;
-  text-transform: capitalize;
+//  text-transform: capitalize;
 }
 
 /* -------------------------------------
@@ -188,6 +188,7 @@ a {
   padding: 20px;
   text-align: center;
   border-radius: 3px 3px 0 0;
+  background: #666;
 }
 .alert a {
   color: #fff;
@@ -198,11 +199,18 @@ a {
 .alert.alert-warning {
   background: #ff9f00;
 }
+.alert.alert-info {
+  background: #348eda;
+}
 .alert.alert-bad {
   background: #d0021b;
 }
 .alert.alert-good {
   background: #68b90f;
+}
+.alert strong {
+  font-weight: 600;
+  font-size: 1em;
 }
 
 /* -------------------------------------

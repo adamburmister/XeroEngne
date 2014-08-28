@@ -8,6 +8,8 @@ module XeroEngine
   require 'rack/timeout'
   require 'redis'
   require 'sinatra'
+  require 'sidekiq'
+  require 'sidekiq_mailer'
   require 'pundit'
   require 'flutie'
   require 'simple_form'

@@ -1,3 +1,5 @@
-class OrganisationMailer < ActionMailer::Base
-  default from: ENV.fetch('CUSTOMER_SUPPORT_EMAIL')
+module XeroEngine
+  class OrganisationMailer < ActionMailer::Base
+    default from: ENV.fetch('CUSTOMER_SUPPORT_EMAIL')
+  end
 end

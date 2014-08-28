@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 require 'sidetiq/web'
 
 XeroEngine::Engine.routes.draw do
@@ -24,4 +25,7 @@ XeroEngine::Engine.routes.draw do
 
   get '/dashboard', to: 'dashboard#index', as: :dashboard
 
+  authenticate :user, lambda { |u| u.email == ENV.fetch('ADMIN_EMAIL') } do
+    mount Sidekiq::Web => '/sidekiq-monitoring'
+  end
 end
