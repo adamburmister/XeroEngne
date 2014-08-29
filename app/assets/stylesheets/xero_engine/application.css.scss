@@ -3,12 +3,7 @@
 @import "theme";
 @import "bootstrap-custom";
 
+@import "header";
 @import "pages";
 @import "after_signup";
 @import "mobile";
-
-.navbar-collapse .badge-credit {
-  background-color: #fff;
-  color: $link-color;
-  text-shadow: none;
-}

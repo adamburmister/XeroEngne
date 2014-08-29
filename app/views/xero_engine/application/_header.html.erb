@@ -9,7 +9,9 @@
       </button>
       <%= link_to site_name, xero_engine.root_path, class: 'navbar-brand' %>
     </div>
-    <div class="navbar-collapse navbar-inverse-collapse collapse">
+
+    <!-- Primary navigation -->
+    <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
       <% if user_signed_in? %>
         <li class="dropdown">
@@ -29,12 +31,23 @@
             </li>
           </ul>
         </li>
-      <% end %>
+      <% else %>
         <%= render partial: 'header_page_links' %>
+      <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <%= render "devise_links" %>
       </ul>
     </div><!--/.nav-collapse -->
+  </div><!-- /.container -->
+
+  <% if user_signed_in? %>
+  <div class="container secondary-navbar">
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <%= render partial: 'header_page_links' %>
+      </ul>
+    </div><!--/.nav-collapse -->
   </div>
+  <% end %>
 </div>
