@@ -1,0 +1,12 @@
+<%- if user_signed_in? %>
+<%- if current_organisation? && current_organisation.setup_completed? %>
+    <% unless current_organisation_membership.expired? %>
+        <li class="small text-danger">
+          TODO: Override application/_header_page_links.html.erb
+        </li>
+    <% end %>
+<%- end %>
+<% else %>
+<li><%= link_to 'Home', xero_engine.root_path %></li>
+<li><%= link_to 'About', xero_engine.page_path(id: 'about') %></li>
+<%- end %>

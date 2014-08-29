@@ -1,21 +1,21 @@
 <footer class="container footer">
   <div class="footer-links row">
     <hr/>
-    <ul class="col-xs-4 list-unstyled">
+    <ul class="col-xs-6 col-sm-4 list-unstyled">
       <li>
         <h3 class="h6 text-uppercase"><%= site_name %></h3>
       </li>
       <%# Customise the footer site content links by editing `footer_page_links` template %>
       <%= render partial: 'footer_page_links' %>
     </ul>
-    <ul class="col-xs-4 list-unstyled">
+    <ul class="col-xs-6 col-sm-4 list-unstyled">
       <li><h3 class="h6 text-uppercase">Contact Us</h3></li>
       <li>
         <a href="https://twitter.com/<%= ENV.fetch('CUSTOMER_SUPPORT_TWITTER') %>">Twitter</a>
       </li>
       <li><a href="mailto:<%= ENV.fetch('CUSTOMER_SUPPORT_EMAIL') %>">Support</a></li>
     </ul>
-    <ul class="col-xs-4 list-unstyled">
+    <ul class="col-xs-6 col-sm-4 list-unstyled">
       <li>
         <h3 class="h6 text-uppercase">Legal</h3>
       </li>
