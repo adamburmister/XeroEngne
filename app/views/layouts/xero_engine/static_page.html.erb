@@ -1,1 +1,13 @@
-<%= render template: 'layouts/xero_engine/application' %>
+<%= render partial: 'layouts/xero_engine/head' %>
+<body class="<%= body_class %>">
+<%= render "header" -%>
+<div class="container">
+  <%= render "flashes" -%>
+  <div class="row">
+    <%= yield %>
+  </div>
+</div>
+<%= render "footer" %>
+<%= render "javascript" %>
+</body>
+</html>

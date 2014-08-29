@@ -115,7 +115,7 @@ GEM
     coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.7.1)
+    coffee-script-source (1.8.0)
     connection_pool (2.0.0)
     countries (0.9.3)
       currencies (~> 0.4.2)

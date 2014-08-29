@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="ROBOTS" content="NOODP" />
-  <meta name="viewport" content="initial-scale=1" />
-  <title><%= page_title %></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <link rel="icon" href="<%= image_url "favicon.ico" %>">
-  <link rel="apple-touch-icon" href="<%= image_url "apple-touch-icon.png" %>">
-  <link rel="apple-touch-icon" sizes="76x76" href="<%= image_url "apple-touch-icon-76x76.png" %>">
-  <link rel="apple-touch-icon" sizes="120x120" href="<%= image_url "apple-touch-icon-120x120.png" %>">
-  <link rel="apple-touch-icon" sizes="152x152" href="<%= image_url "apple-touch-icon-152x152.png" %>">
-  <%= stylesheet_link_tag "xero_engine/application" %>
-  <%= stylesheet_link_tag :'application.html.erb', media: "all" %>
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <%= csrf_meta_tags %>
-</head>
+<%= render partial: 'layouts/xero_engine/head' %>
 <body class="<%= body_class %>">
 <%= render "header" -%>
 <div class="container">

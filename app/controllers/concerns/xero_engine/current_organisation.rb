@@ -45,7 +45,7 @@ module XeroEngine::CurrentOrganisation
   # ---- Filters ----
 
   def ensure_current_organisation
-    if user_signed_in?
+    if user_signed_in? && (controller_name != 'pages' || request.path == xero_engine.root_path)
       if current_organisation_short_code.blank? #&& current_organisation
         if current_user.organisation_memberships.count == 1
           set_current_organisation_short_code current_user.organisation_memberships.first.short_code

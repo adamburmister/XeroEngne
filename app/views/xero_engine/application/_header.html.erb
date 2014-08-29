@@ -1,4 +1,4 @@
-<div class="navbar navbar-default" role="navigation">
+<div class="navbar navbar-default navbar-inverse" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -9,7 +9,7 @@
       </button>
       <%= link_to site_name, xero_engine.root_path, class: 'navbar-brand' %>
     </div>
-    <div class="navbar-collapse collapse">
+    <div class="navbar-collapse navbar-inverse-collapse collapse">
       <ul class="nav navbar-nav">
       <% if user_signed_in? %>
         <li class="dropdown">

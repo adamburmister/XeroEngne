@@ -1,12 +1,7 @@
 @charset "utf-8";
 
-@import "bootstrap-variables";
+@import "theme";
 @import 'bootstrap-custom';
-@import "bootstrap/theme";
 
 @import 'pages';
 @import 'after_signup';
-
-.badge-credit {
-  background-color: $brand-info;
-}
