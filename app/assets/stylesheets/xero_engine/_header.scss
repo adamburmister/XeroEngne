@@ -7,17 +7,26 @@
 
   .secondary-navbar {
     background: $gray-dark;
-    padding-left: 0;
-    padding-right: 0;
-
-    .navbar-collapse {
-      padding-left: 5px;
-      padding-right: 5px;
-    }
+    margin-top: 0;
+    margin-bottom: 0;
 
     .navbar-nav > li > a {
       &:hover {
         background: $gray-darker;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-xs-max) {
+  .navbar {
+    .secondary-navbar {
+      padding-left: 0;
+      padding-right: 0;
+
+      .navbar-collapse {
+        padding-left: 5px;
+        padding-right: 5px;
       }
     }
   }
