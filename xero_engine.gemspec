@@ -34,7 +34,6 @@ Gem::Specification.new do |s|
   s.add_dependency "title"
   s.add_dependency "uglifier"
   s.add_dependency "unicorn"
-  # s.add_dependency "xeroizer", "~> 2.15.5"
 
   # Add on's
   s.add_dependency "devise" # authentication
@@ -65,6 +64,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency "timecop"
   s.add_development_dependency "webmock"
   s.add_development_dependency 'simplecov'
-
-  # s.add_development_dependency "sqlite3"
 end

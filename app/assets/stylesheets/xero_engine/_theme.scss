@@ -1,9 +1,49 @@
 @import "bootstrap/mixins";
 @import "bootswatch/cosmo/variables";
+
+//-- CUSTOMISE BOOTSWATCH THEME -----------------------------
+
+$font-family-sans-serif:  "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
+
+// Colours
+
+$gray-darker:              lighten(#000, 13.5%);
+$gray-dark:                #333;
+$gray:                     #95a5a6;
+$gray-light:               #b4bcc2;
+$gray-lighter:             #ecf0f1;
+
+$brand-primary:            #0c84e4;
+$brand-success:            #18BC9C;
+$brand-info:               #9954BB;
+$brand-warning:            #F39C12;
+$brand-danger:             #E74C3C;
+
+// Navbar
+
+$navbar-inverse-color:     $navbar-color;
+$navbar-inverse-bg:        $navbar-bg;
+$navbar-inverse-border:    $navbar-border;
+
+// Border Radius
+
+$border-radius-base:       3px;
+$border-radius-large:      5px;
+
+$input-border-radius:      $border-radius-small;
+$alert-border-radius:      $border-radius-small;
+$list-group-border-radius: $border-radius-small;
+$panel-border-radius:      $border-radius-small;
+
+// Buttons
+
+$btn-default-bg:           $gray-light;
+
 @import "bootswatch/cosmo/bootswatch";
 
+// Give buttons a bottom 3D effect
 .btn {
-  box-shadow: inset 0 -3px rgba(0,0,0,0.2);
+  box-shadow: inset 0 -2px rgba(0,0,0,0.2);
   &:hover {
     box-shadow: inset 0 -1px rgba(0,0,0,0.3);
   }

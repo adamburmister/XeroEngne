@@ -1,4 +1,4 @@
-<div class="navbar navbar-default navbar-inverse" role="navigation">
+<div class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -38,7 +38,7 @@
       <ul class="nav navbar-nav navbar-right">
         <%= render "devise_links" %>
       </ul>
-    </div><!--/.nav-collapse -->
+    </div><!-- /.nav-collapse -->
   </div><!-- /.container -->
 
   <% if user_signed_in? %>
@@ -47,7 +47,7 @@
       <ul class="nav navbar-nav">
         <%= render partial: 'header_page_links' %>
       </ul>
-    </div><!--/.nav-collapse -->
-  </div>
+    </div><!-- /.nav-collapse -->
+  </div><!-- /.secondary-navbar -->
   <% end %>
-</div>
+</div><!-- /navigation header -->
