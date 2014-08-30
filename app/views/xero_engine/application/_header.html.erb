@@ -41,7 +41,7 @@
     </div><!-- /.nav-collapse -->
   </div><!-- /.container -->
 
-  <% if user_signed_in? %>
+  <% if user_signed_in? && current_organisation? && current_organisation.setup_completed? %>
   <div class="container secondary-navbar">
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">

@@ -13,12 +13,12 @@
   <%- if state == :reconnection %>
   <div class="connect">
     <%= link_to "Re-connect to my Xero Organisation", new_organisation_membership_path, id: 'btnConnect', class: 'btn btn-primary', data: {orgname: @organisation.name, shortcode: @organisation.short_code} %>
-    <%= link_to "Back", organisation_memberships_path, class: 'btn' %>
+    <%= link_to "Back", organisation_memberships_path, class: 'btn btn-link' %>
   </div>
   <%- end %>
 
   <div class="waiting" style="display:none">
-    <%= image_tag("xero_engine/spinner.gif", class: 'pull-left') %>
+    <%= image_tag("xero_engine/spinner.gif", class: 'spinner pull-left') %>
     <em>Waiting for connection to Xero</em>
   </div>
 

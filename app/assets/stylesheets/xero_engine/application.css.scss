@@ -14,3 +14,14 @@
   @extend .alert;
   @extend .alert-info;
 }
+
+// Connect to Xero buttons
+.oauthConnectButtons {
+  .waiting {
+    line-height: $input-height-small;
+    color: $text-muted;
+    .spinner {
+      margin-right: 1em;
+    }
+  }
+}
