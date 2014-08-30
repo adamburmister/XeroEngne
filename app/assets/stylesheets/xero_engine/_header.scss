@@ -1,18 +1,35 @@
 .navbar {
+  border: none;
+
   .badge-credit {
     background-color: #fff;
     color: $link-color;
     text-shadow: none;
   }
 
-  .secondary-navbar {
-    background: $gray-dark;
-    margin-top: 0;
-    margin-bottom: 0;
+  .navbar-nav > li > a.btn-rounded-dropdown {
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50px;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    &:hover {
+      border-color: #fff;
+      background-color: transparent;
+    }
+  }
 
-    .navbar-nav > li > a {
-      &:hover {
-        background: $gray-darker;
+  .secondary-navbar {
+    background: darken(desaturate($navbar-default-link-active-bg, 50%), 10%);
+
+    .navbar-nav {
+      margin-top: 0;
+      margin-bottom: 0;
+
+      > li > a {
+        &:hover {
+          background: $gray-darker;
+        }
       }
     }
   }

@@ -17,7 +17,7 @@
         <li class="dropdown">
           <%= link_to "#{current_organisation? ? truncate(current_organisation.name, length: 20) : 'Select an Organisation'} <b class=caret></b>".html_safe,
                       '#',
-                      class: 'dropdown-toggle',
+                      class: 'dropdown-toggle btn-rounded-dropdown',
                       data: { toggle: 'dropdown' } %>
           <ul class="dropdown-menu" role="menu">
             <% current_user.organisation_memberships.each do |m| %>

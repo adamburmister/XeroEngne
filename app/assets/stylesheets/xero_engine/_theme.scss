@@ -1,11 +1,4 @@
 @import "bootstrap/mixins";
-@import "bootswatch/cosmo/variables";
-
-//-- CUSTOMISE BOOTSWATCH THEME -----------------------------
-
-$font-family-sans-serif:  "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
-
-// Colours
 
 $gray-darker:              lighten(#000, 13.5%);
 $gray-dark:                #444;
@@ -19,11 +12,24 @@ $brand-info:               #9954BB;
 $brand-warning:            #F39C12;
 $brand-danger:             #E74C3C;
 
+@import "bootswatch/cosmo/variables";
+
+//-- CUSTOMISE BOOTSWATCH THEME -----------------------------
+
 // Navbar
 
 $navbar-default-color:     $navbar-inverse-color;
 $navbar-default-bg:        $navbar-inverse-bg;
 $navbar-default-border:    $navbar-inverse-border;
+
+$navbar-default-link-color:         $navbar-inverse-link-color;
+$navbar-default-link-hover-color:   $navbar-inverse-link-hover-color;
+$navbar-default-link-hover-bg:      $navbar-inverse-link-hover-bg;
+$navbar-default-link-active-color:  $navbar-inverse-link-active-color;
+$navbar-default-link-active-bg:     $navbar-inverse-link-active-bg;
+$navbar-default-link-disabled-color:$navbar-inverse-link-disabled-color;
+$navbar-default-link-disabled-bg:   $navbar-inverse-link-disabled-bg;
+
 
 // Border Radius
 
