@@ -21,7 +21,7 @@ en:
       destruction:
         success: "You have successfully revoked access to your Xero organisation %{organisation_name}"
     payment_method:
-      missing: "<strong>You need to add a payment method for this account.</strong> Please <a href=/billing>add payment card details</a>."
+      missing: "<strong>You need to add a payment method for this account.</strong> <a href=/billing>Please add payment card details in the Billing section.</a>"
       creation:
         success: "You have successfully added a new payment method to your account."
         error: "Sorry, there was a problem adding that payment method. Please contact customer support."

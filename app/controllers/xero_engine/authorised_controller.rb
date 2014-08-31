@@ -13,6 +13,11 @@ module XeroEngine
 
     rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+    # Call from a controller to hide the page navigation structure
+    def hide_secondary_navbar
+      @hide_secondary_navbar = true
+    end
+
     # Rescue from Pundit auth errors
     def user_not_authorized
       redirect_to request.referrer || root_url, alert: 'Access denied'

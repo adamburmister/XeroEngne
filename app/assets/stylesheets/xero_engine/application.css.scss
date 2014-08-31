@@ -3,6 +3,34 @@
 @import "theme";
 @import "bootstrap-custom";
 
+
+@import "bootswatch/cosmo/bootswatch";
+
+label, input[type=text] {
+  font-family: $font-family-sans-serif-secondary;
+}
+
+// Give buttons a bottom 3D effect
+.btn {
+  box-shadow: inset 0 -2px rgba(0,0,0,0.2);
+  &:hover {
+    box-shadow: inset 0 -1px rgba(0,0,0,0.3);
+  }
+}
+
+.alert {
+  clear: both;
+}
+.alert-warning {
+  a {
+    color: darken($alert-warning-bg, 30%);
+
+    &:hover {
+      color: $alert-warning-text;
+    }
+  }
+}
+
 @import "header";
 @import "pages";
 @import "after_signup";

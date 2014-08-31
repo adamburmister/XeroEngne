@@ -46,6 +46,8 @@ module XeroEngine
     end
 
     def expired
+      hide_secondary_navbar
+
       @membership = current_user.organisation_memberships.find(params[:id])
       authorize @membership
 

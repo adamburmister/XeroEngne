@@ -1,17 +1,15 @@
-<%- content_for(:javascript) do %>
-<%= javascript_include_tag 'organisation_memberships' %>
-<%- end %>
-
 <div class="row">
   <div class="col-xs-12">
   
   <% if @organisation_memberships.empty? %>
-  
-    <h2>Hi. Let's connect to your Xero Organisation.</h2>
 
-    <p>You need to grant us access to your Xero Organisation through Xero's secure login system.</p>
+    <div class="page-header">
+        <h2>Hi. Let's connect to your Xero Organisation.</h2>
+    </div>
+
+    <p><strong>You need to grant us access to your Xero Organisation through Xero's secure login system.</strong></p>
     <p>Granting access ensures we can access up to date information for your company.</p>
-    <p>You can revoke access at any time from within the Xero Organisation's settings page.</p>
+    <p>You can revoke access at any time from within Xero.</p>
   
   <% else %>
 
@@ -32,7 +30,7 @@
     <% end %>
     </ul>
   <% end %>
-
+    <hr/>
     <%= render partial: 'oauth_connect_btn', locals: { state: :new_connection } %>
   </div>
 </div>
