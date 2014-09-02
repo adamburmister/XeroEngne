@@ -6,11 +6,11 @@ module XeroEngine
     # end
 
     def site_name
-      ENV.fetch('SITE_NAME') || '[.env SITE_NAME not set]'
+      ENV.fetch('SITE_NAME')
     end
 
     def site_url
-      ENV['SITE_URL']
+      ENV.fetch('SITE_URL')
     end
 
   end
