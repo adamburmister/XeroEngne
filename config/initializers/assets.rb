@@ -8,3 +8,5 @@ Rails.application.config.assets.version = (ENV["ASSETS_VERSION"] || "1.0")
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.precompile += %w( organisation_memberships.js, xero_engine/mailer.css )
+
+Rails.application.config.assets.initialize_on_precompile = false
