@@ -7,6 +7,7 @@ class CreateXeroEngineBillingTransactions < ActiveRecord::Migration
       t.integer :transaction_type, default: 0, null: false
       t.money :amount, default: 0
       t.boolean :completed, default: false
+      t.string :description, null: true
       t.timestamps
     end
 

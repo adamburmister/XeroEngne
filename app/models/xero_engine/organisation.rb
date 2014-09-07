@@ -14,7 +14,7 @@ module XeroEngine
     validates :name, presence: true
     validates :short_code, presence: true
 
-    attr_accessor :stripe_token, :coupon
+    attr_accessor :stripe_token, :coupon, :xero_client
 
     # Is org actively being used within our app? We can use this information
     # to not include it in backend processes, for instance, since noone's paying
@@ -35,6 +35,10 @@ module XeroEngine
 
     def debit_amount(options={ this_month: true })
       0
+    end
+
+    def created_by
+      self.users.first
     end
 
     def has_auto_top_up?

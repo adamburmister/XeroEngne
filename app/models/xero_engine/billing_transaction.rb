@@ -2,6 +2,9 @@ module XeroEngine
   class BillingTransaction < ActiveRecord::Base
     include Stripe::Callbacks
 
+    scope :credits, -> { where(transaction_type: 0).order(created_at: :desc) }
+    scope :debits,  -> { where(transaction_type: 1).order(created_at: :desc) }
+
     # Relationships
     belongs_to :organisation
     belongs_to :created_by, class_name: 'XeroEngine::User'
@@ -17,14 +20,6 @@ module XeroEngine
 
     # Validations
     validates :created_by, presence: true
-
-    def self.credits
-      where(transaction_type: 0).order(created_at: :desc)
-    end
-
-    def self.debits
-      where(transaction_type: 1).order(created_at: :desc)
-    end
 
     def stripe_charge
       @stripe_charge ||= Stripe::Charge.retrieve(stripe_charge_id)

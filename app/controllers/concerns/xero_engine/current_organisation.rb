@@ -51,7 +51,8 @@ module XeroEngine::CurrentOrganisation
         if current_user.organisation_memberships.count == 1
           set_current_organisation_short_code current_user.organisation_memberships.first.short_code
         else
-          message = I18n.t 'xero_engine.organisation_memberships.select_organisation'
+          message = (current_user.organisation_memberships.count == 0) ? nil :
+                      I18n.t('xero_engine.organisation_memberships.select_organisation')
           redirect_to organisation_memberships_path, notice: message
         end
       end
