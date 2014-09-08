@@ -13,9 +13,9 @@ module XeroEngine
       Dir[File.join(File.dirname(__FILE__), '../tasks/*.rake')].each { |f| load f }
     end
 
-    initializer 'Precompile hook', group: :all do |app|
-      app.config.assets.precompile += %w(organisation_memberships.js xero_engine/mailer.css)
-    end
+    # initializer 'Precompile hook', group: :all do |app|
+    #   app.config.assets.precompile += %w(organisation_memberships.js xero_engine/mailer.css)
+    # end
 
     initializer "Require concerns path" do |app|
       [ "app/controllers/concerns",
