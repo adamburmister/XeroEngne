@@ -1,12 +1,16 @@
 <%= render partial: 'layouts/xero_engine/head' %>
 <body class="<%= body_class %>">
-<%= render "header" -%>
-<div class="container">
-  <%= render "flashes" -%>
-  <div class="row">
-    <%= yield %>
+  <%= render "header" %>
+<%- if controller.current_page == 'pages/home' %>
+  <%= yield %>
+<%- else %>
+  <div class="container">
+    <%= render "flashes" -%>
+    <div class="row">
+      <%= yield %>
+    </div>
   </div>
-</div>
+<%- end %>
 <%= render "footer" %>
 <%= render "javascript" %>
 </body>
